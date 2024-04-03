@@ -1,0 +1,17 @@
+1. lupuspatient
+python ./scripts/train.py --outdir ./results/lupuspatients/drug-cisplatin/model-cellot --config ./configs/tasks/lupuspatients.yaml --config ./configs/models/cellot.yaml 
+
+2. statefate_in_vitro_ood
+python ./scripts/train.py --outdir ./results/statefate/drug-developed/model-cellot --config ./configs/tasks/statefate-in_vitro-ood.yaml --config ./configs/models/cellot.yaml --config.data.target developed
+
+2-1. statefate.yaml 에 target이 없음
+
+3. crosspecies
+python ./scripts/train.py --outdir ./results/statefate/drug-LPS/model-cellot --config ./configs/tasks/crossspecies.yaml --config ./configs/models/cellot.yaml --config.data.target LPS
+
+
+4. sciplex
+python ./scripts/train.py --outdir ./results/statefate/drug-cisplatin/model-cellot --config ./configs/tasks/sciplex3.yaml --config ./configs/models/cellot.yaml --config.data.target LPS --config.data.target cisplatin
+
+5. gbm 
+python ./scripts/train.py --outdir ./results/gbm/drug-panobinostat/model-cellot --config ./configs/tasks/gbm.yaml --config ./configs/models/cellot.yaml --config.data.target panobinostat
